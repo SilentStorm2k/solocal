@@ -6,7 +6,6 @@ import { eventFormSchema } from "@/schema/events";
 import { auth } from "@clerk/nextjs/server";
 import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import z from "zod";
 
 export async function createEvent(
@@ -94,4 +93,15 @@ export async function getEvents(clerkUserId: string): Promise<EventRow[]> {
 		orderBy: ({ name }, { asc, sql }) => asc(sql`lower(${name})`),
 	});
 	return events;
+}
+
+export async function getEvent(
+	clerkUserId: string,
+	eventId: string
+): Promise<EventRow | undefined> {
+	const event = await db.query.EventTable.findFirst({
+		where: (table, { and, eq }) =>
+			and(eq(table.clerkUserId, clerkUserId), eq(table.id, eventId)),
+	});
+	return event ?? undefined;
 }
