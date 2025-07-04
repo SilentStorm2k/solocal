@@ -70,7 +70,7 @@ export const ScheduleAvailabilityTable = pgTable(
 );
 
 // We also need to define the reverse relation for : each availability belonging to one schedule
-export const ScehduleAvailabilityRelations = relations(
+export const ScheduleAvailabilityRelations = relations(
 	ScheduleAvailabilityTable,
 	({ one }) => ({
 		schedule: one(ScheduleTable, {

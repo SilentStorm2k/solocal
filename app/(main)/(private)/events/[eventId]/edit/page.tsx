@@ -9,10 +9,10 @@ export default async function EditEventPage({
 	params: Promise<{ eventId: string }>;
 }) {
 	const { userId, redirectToSignIn } = await auth();
-	if (!userId) redirectToSignIn();
+	if (!userId) return redirectToSignIn();
 
 	const { eventId } = await params;
-	const event = await getEvent(userId!, eventId);
+	const event = await getEvent(userId, eventId);
 
 	if (!event)
 		return (
