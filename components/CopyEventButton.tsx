@@ -1,74 +1,74 @@
-"use client";
+'use client';
 
-import { VariantProps } from "class-variance-authority";
-import { Button, buttonVariants } from "./ui/button";
-import { cn } from "@/lib/utils";
-import { CopyIcon } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
+import { VariantProps } from 'class-variance-authority';
+import { Button, buttonVariants } from './ui/button';
+import { cn } from '@/lib/utils';
+import { CopyIcon } from 'lucide-react';
+import { useState } from 'react';
+import { toast } from 'sonner';
 
-type CopyState = "idle" | "copied" | "error";
+type CopyState = 'idle' | 'copied' | 'error';
 
 interface CopyEventButtonProps
-	extends Omit<React.ComponentProps<"button">, "children" | "onClick">,
-		VariantProps<typeof buttonVariants> {
-	eventId: string;
-	clerkUserId: string;
+  extends Omit<React.ComponentProps<'button'>, 'children' | 'onClick'>,
+    VariantProps<typeof buttonVariants> {
+  eventId: string;
+  clerkUserId: string;
 }
 
 function getCopyLabel(state: CopyState) {
-	switch (state) {
-		case "copied":
-			return "Copied!";
-		case "error":
-			return "Error";
-		case "idle":
-		default:
-			return "Copy Link";
-	}
+  switch (state) {
+    case 'copied':
+      return 'Copied!';
+    case 'error':
+      return 'Error';
+    case 'idle':
+    default:
+      return 'Copy Link';
+  }
 }
 
 export function CopyEventButton({
-	eventId,
-	clerkUserId,
-	className,
-	variant,
-	size,
-	...props
+  eventId,
+  clerkUserId,
+  className,
+  variant,
+  size,
+  ...props
 }: CopyEventButtonProps) {
-	const [copyState, setCopyState] = useState<CopyState>("idle");
+  const [copyState, setCopyState] = useState<CopyState>('idle');
 
-	const handleCopy = () => {
-		const url = `${location.origin}/book/${clerkUserId}/${eventId}`;
+  const handleCopy = () => {
+    const url = `${location.origin}/book/${clerkUserId}/${eventId}`;
 
-		navigator.clipboard
-			.writeText(url)
-			.then(() => {
-				setCopyState("copied");
-				toast("Link copied successfully!", { duration: 3000 });
-				setTimeout(() => setCopyState("idle"), 2000); // Reset after 2 seconds
-			})
-			.catch(() => {
-				setCopyState("error");
-				setTimeout(() => setCopyState("idle"), 2000); // Reset after 2 seconds
-			});
-	};
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        setCopyState('copied');
+        toast('Link copied successfully!', { duration: 3000 });
+        setTimeout(() => setCopyState('idle'), 2000); // Reset after 2 seconds
+      })
+      .catch(() => {
+        setCopyState('error');
+        setTimeout(() => setCopyState('idle'), 2000); // Reset after 2 seconds
+      });
+  };
 
-	return (
-		<Button
-			onClick={handleCopy}
-			className={cn(
-				buttonVariants({ variant, size }),
-				"cursor-pointer",
-				className
-			)}
-			variant={variant}
-			size={size}
-			{...props}
-		>
-			<CopyIcon className="size-4 mr-2" />
-			{getCopyLabel(copyState)}
-			{/* need to show "copied" when clicked then revert back to "copy" */}
-		</Button>
-	);
+  return (
+    <Button
+      onClick={handleCopy}
+      className={cn(
+        buttonVariants({ variant, size }),
+        'cursor-pointer',
+        className,
+      )}
+      variant={variant}
+      size={size}
+      {...props}
+    >
+      <CopyIcon className='size-4 mr-2' />
+      {getCopyLabel(copyState)}
+      {/* need to show "copied" when clicked then revert back to "copy" */}
+    </Button>
+  );
 }

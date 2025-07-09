@@ -1,0 +1,32 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore generated directories
+node_modules
+.next
+out
+build
+dist
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# Ignore public assets (optional, if you don't want Prettier touching these)
+public/**/*.svg
+public/**/*.png
+public/**/*.jpg
+public/**/*.gif
+
+# Ignore specific configuration files (optional, if not handled by other tools)
+.eslintrc.json
+next.config.js
+tailwind.config.js
