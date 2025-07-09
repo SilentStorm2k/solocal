@@ -1,3 +1,5 @@
+import { time } from "console";
+
 // formats duration in minutes to a human-readable string
 export function formatEventDescription(durationInMinutes: number): string {
 	const hours = Math.floor(durationInMinutes / 60);
@@ -20,4 +22,29 @@ export function formatTimeZoneOffset(timezone: string): string {
 			.formatToParts(new Date())
 			.find((part) => part.type === "timeZoneName")?.value || ""
 	);
+}
+
+const timeFormatter = new Intl.DateTimeFormat(undefined, {
+	timeStyle: "short",
+});
+
+export function formatTimeString(date: Date) {
+	return timeFormatter.format(date);
+}
+
+const dateFormatter = new Intl.DateTimeFormat(undefined, {
+	dateStyle: "medium",
+});
+
+export function formatDate(date: Date) {
+	return dateFormatter.format(date);
+}
+
+const dateTimeFormatter = new Intl.DateTimeFormat(undefined, {
+	timeStyle: "short",
+	dateStyle: "medium",
+});
+
+export function formatDateTime(date: Date) {
+	return dateTimeFormatter.format(date);
 }
