@@ -46,7 +46,7 @@ export default async function SuccessPage({
         <CardDescription>{formatDateTime(startTimeDate)}</CardDescription>
       </CardHeader>
       <CardContent>
-        You should recieve an email conformation shortly. You can safely close
+        You should receive an email conformation shortly. You can safely close
         this page now.
       </CardContent>
     </Card>

@@ -36,6 +36,7 @@ import { Input } from '../ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Calendar } from '../ui/calendar';
 import { isSameDay } from 'date-fns';
+import { fromZonedTime } from 'date-fns-tz';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { Textarea } from '../ui/textarea';
@@ -182,7 +183,10 @@ export default function MeetingForm({
                 <Select
                   disabled={date == null || timezone == null}
                   onValueChange={(value) =>
-                    field.onChange(new Date(Date.parse(value)))
+                    field.onChange(
+                      // new Date(Date.parse(value)),
+                      fromZonedTime(value, timezone),
+                    )
                   }
                   defaultValue={field.value?.toISOString()}
                 >
