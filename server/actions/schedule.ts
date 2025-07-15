@@ -109,10 +109,12 @@ export async function getValidTimesFromSchedule(
   const start = timesInOrder[0];
   const end = timesInOrder.at(-1);
 
+  console.log('Start and end: ', start, end, timesInOrder);
   if (!start || !end) return [];
 
   const schedule = await getSchedule(userId); // get users schedule with the availabilities
 
+  console.log(schedule);
   if (schedule == null) return [];
 
   const groupedAvailabilities = Object.groupBy(
