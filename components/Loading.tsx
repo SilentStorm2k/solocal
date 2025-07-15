@@ -5,7 +5,7 @@ export function Loading() {
   return (
     <div className='flex flex-col items-center justify-center h-screen animate-fade-in pt-16'>
       <TrophySpin
-        color='#2b7fff'
+        color='#f5f1e6'
         size='large'
         text='Loading...'
         textColor='black'

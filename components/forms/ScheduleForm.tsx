@@ -76,7 +76,7 @@ export default function ScheduleForm({
       toast('Schedule saved successfully!', {
         duration: 5000,
         className:
-          '!rounded-3xl !py-8 !px-5 !justify-center !text-lg !font-black !text-green-400',
+          '!rounded-3xl !py-8 !px-5 !justify-center !text-lg !font-black !border-solocal-neutral-soft-cream',
       });
     } catch (error: any) {
       form.setError('root', {
@@ -231,7 +231,7 @@ export default function ScheduleForm({
         {/* Save button */}
         <div className='flex justify-start gap-2'>
           <Button
-            className='cursor-pointer hover:scale-110 hover:bg-blue-600'
+            className='cursor-pointer hover:scale-110 hover:bg-solocal-accent-gold-alt'
             type='submit'
             disabled={form.formState.isSubmitting}
           >

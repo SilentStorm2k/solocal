@@ -12,9 +12,11 @@ export default function PublicNavbar() {
         className='flex items-center gap-1 hover:scale-150 duration-500'
       >
         <Image
-          src={'/assets/logo.svg'}
+          src={'/assets/logo.png'}
           width={60}
           height={60}
+          quality={100}
+          unoptimized
           alt='solocal logo'
         />
       </Link>
@@ -23,7 +25,7 @@ export default function PublicNavbar() {
       <section className='sticky top-0 flex justify-between'>
         <div className='flex flex-1 max-sm:gap-0 sm:gap-6'>
           <SignInButton>
-            <Button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 cursor-pointer hover:scale-150 duration-500 rounded-2xl shadow-2xl'>
+            <Button className='bg-solocal-accent-muted-rose/60 hover:bg-solocal-accent-muted-rose/90 text-white font-bold py-2 px-4 border border-gray-400 cursor-pointer hover:scale-150 duration-500 rounded-2xl shadow-2xl'>
               Login
             </Button>
           </SignInButton>

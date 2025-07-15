@@ -209,7 +209,7 @@ export function EventForm({
           </Button>
 
           <Button
-            className='cursor-pointer hover:scale-105 bg-blue-500 hover:bg-blue-600'
+            className='cursor-pointer hover:scale-105 bg-solocal-neutral-soft-cream/60 hover:bg-solocal-neutral-off-white/90'
             disabled={isDeletePending || form.formState.isSubmitting}
             type='submit'
           >

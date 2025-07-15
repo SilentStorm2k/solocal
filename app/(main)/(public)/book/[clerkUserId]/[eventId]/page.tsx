@@ -57,7 +57,7 @@ export default async function BookEventPage({
 
   // Actual booking form with list of valid available times
   return (
-    <Card className='max-w-4xl mx-auto border-8 border-blue-200 shadow-2xl shadow-accent-foreground'>
+    <Card className='max-w-4xl mx-auto border-8 border-solocal-neutral-off-white/65 shadow-2xl shadow-accent-foreground'>
       <CardHeader>
         <CardTitle>
           Book {event.name} with {calendarUser.fullName}

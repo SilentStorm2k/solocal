@@ -11,7 +11,7 @@ export default async function SchedulePage() {
 
   // render the schedule page with the fetched schedule data using a schedule form
   return (
-    <Card className='max-w-md mx-auto border-8 border-blue-200 shadow-2xl shadow-accent-foreground'>
+    <Card className='max-w-md mx-auto border-6 border-solocal-neutral-off-white/70 shadow-2xl shadow-accent-foreground'>
       <CardHeader>
         <CardTitle>My schedule</CardTitle>
       </CardHeader>

@@ -20,7 +20,7 @@ export default async function EditEventPage({
     );
 
   return (
-    <Card className='max-w-md mx-auto border-8 border-blue-200 shadow-2xl shadow-accent-foreground'>
+    <Card className='max-w-md mx-auto border-6 border-solocal-neutral-soft-cream/80 shadow-2xl shadow-accent-foreground'>
       <CardHeader>
         <CardTitle>Edit Event</CardTitle>
       </CardHeader>

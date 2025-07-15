@@ -6,7 +6,7 @@ export default function Booking() {
   return (
     <div>
       <BlinkBlur
-        color='#2b7fff'
+        color='#f5f1e6'
         size='large'
         text="Booking event, don't click back or refresh the page..."
         textColor='black'

@@ -16,9 +16,11 @@ export default function PrivateNavBar() {
         className='flex items-center gap-1 hover:scale-150 duration-500'
       >
         <Image
-          src={'/assets/logo.svg'}
+          src={'/assets/logo.png'}
           width={60}
           height={60}
+          quality={100}
+          unoptimized
           alt="Let's plan your time"
         />
       </Link>
@@ -36,7 +38,7 @@ export default function PrivateNavBar() {
                 href={item.route}
                 className={cn(
                   'flex gap-4 items-center p-4 rounded-lg justify-start hover:scale-150 duration-300',
-                  isActive && 'bg-blue-100 rounded-3xl',
+                  isActive && 'bg-primary/65 rounded-3xl',
                 )}
               >
                 <Image
@@ -44,6 +46,8 @@ export default function PrivateNavBar() {
                   alt={item.label}
                   width={30}
                   height={30}
+                  quality={100}
+                  unoptimized
                 />
 
                 <p className={cn('text-lg font-semibold max-lg:hidden')}>

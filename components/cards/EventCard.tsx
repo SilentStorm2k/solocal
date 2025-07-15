@@ -32,7 +32,7 @@ export default function EventCard({
   return (
     <Card
       className={cn(
-        'flex flex-col border-4 border-blue-500/10 shadow-2xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110',
+        'flex flex-col border-4 border-solocal-neutral-soft-cream/60 shadow-2xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110',
         !isActive && 'bg-accent border-accent',
       )}
     >
@@ -62,7 +62,7 @@ export default function EventCard({
 
         {/* Edit button */}
         <Button
-          className='cursor-pointer hover:scale-105 bg-blue-400 hover:bg-blue-600'
+          className='cursor-pointer hover:scale-105 bg-solocal-neutral-soft-cream/60 hover:bg-solocal-neutral-off-white/90'
           asChild
         >
           <Link href={`/events/${id}/edit`}>Edit</Link>

@@ -269,7 +269,7 @@ export default function MeetingForm({
             <Link href={`/book/${clerkUserId}`}>Cancel</Link>
           </Button>
           <Button
-            className='cursor-pointer hover:scale-105 bg-blue-400 hover:bg-blue-600'
+            className='cursor-pointer hover:scale-105 bg-solocal-neutral-off-white/60 hover:bg-solocal-neutral-off-white/80'
             disabled={form.formState.isSubmitting}
             type='submit'
           >

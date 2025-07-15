@@ -25,7 +25,7 @@ export default function PublicEventCard({
   durationInMinutes,
 }: PublicEventCardProps) {
   return (
-    <Card className='flex flex-col border-4 border-blue-500/10 shadow-2xl transition delay-140 duration-300 ease-in-out hover:translate-y-1 hover:scale-110'>
+    <Card className='flex flex-col border-4 border-solocal-neutral-off-white/75 shadow-2xl transition delay-140 duration-300 ease-in-out hover:translate-y-1 hover:scale-110'>
       <CardHeader>
         <CardTitle>{name}</CardTitle>
         <CardDescription>
@@ -35,7 +35,7 @@ export default function PublicEventCard({
       {description && <CardContent>{description}</CardContent>}
       <CardFooter className='flex justify-center gap-2 mt-auto'>
         <Button
-          className='cursor-pointer hover:scale-105 bg-blue-400 hover:bg-blue-600'
+          className='cursor-pointer hover:scale-105 bg-solocal-neutral-soft-cream/60 hover:bg-solocal-neutral-off-white/90'
           asChild
         >
           <Link href={`/book/${clerkUserId}/${id}`}>Select</Link>

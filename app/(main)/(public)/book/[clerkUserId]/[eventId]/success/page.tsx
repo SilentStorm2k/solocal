@@ -37,7 +37,7 @@ export default async function SuccessPage({
 
   // Render the success message with booking details
   return (
-    <Card className='max-w-xl mx-auto border-8 border-blue-200 shadow-2xl shadow-accent-foreground'>
+    <Card className='max-w-xl mx-auto border-8 border-solocal-neutral-off-white/65 shadow-2xl shadow-accent-foreground'>
       <CardHeader>
         <CardTitle>
           ✅ Successfully Booked {event.name} with {calendarUser.fullName}

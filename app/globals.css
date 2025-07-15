@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+/* @import 'tailwindcss';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
@@ -43,7 +43,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-@theme {
+@theme inline {
   --animate-fade-in: fade-in-scale 0.5s ease-out;
 
   @keyframes fade-in-scale {
@@ -132,6 +132,211 @@
     @apply border-border outline-ring/50;
   }
   body {
+    @apply bg-background text-foreground;
+  }
+} */
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  The SoloCal Palette:
+  1. Primary Background: Deep Burgundy / Maroon (#4B0C24, #5E112D)
+  2. Primary Accent: Rich Gold (#D4AF37, #FFD700)
+  3. Secondary Neutral: Soft Cream / Off-White (#F5F1E6, #EFE9DC)
+  4. Subtle Shadow / Border: Muted Plum / Charcoal (#2B0F1C, #1C1B1B)
+  5. Optional Accent: Muted Rose / Clay (#A64D6D, #92425F)
+*/
+
+/*
+  @theme inline: This maps the CSS variables (defined in :root and .dark)
+  to Tailwind's utility classes. We are keeping your existing structure
+  and simply updating the values in :root and .dark.
+*/
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Define your SoloCal specific colors as new theme variables here if you want
+     them to have direct utility classes like `bg-solocal-gold`.
+     These are *in addition* to the `var(--...)` mappings above.
+     Only do this if you intend to use classes like `bg-solocal-background-deep-burgundy`.
+  */
+  --color-solocal-background-deep-burgundy: #4b0c24;
+  --color-solocal-background-maroon: #5e112d;
+  --color-solocal-accent-rich-gold: #d4af37;
+  --color-solocal-accent-gold-alt: #ffd700;
+  --color-solocal-neutral-soft-cream: #f5f1e6;
+  --color-solocal-neutral-off-white: #efe9dc;
+  --color-solocal-shadow-muted-plum: #2b0f1c;
+  --color-solocal-shadow-charcoal: #1c1b1b;
+  --color-solocal-accent-muted-rose: #a64d6d;
+  --color-solocal-accent-clay: #92425f;
+}
+
+@theme {
+  --animate-fade-in: fade-in-scale 0.5s ease-out;
+
+  @keyframes fade-in-scale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Light Mode: SoloCal Palette Application */
+:root {
+  --radius: 0.625rem; /* Keep as is or adjust */
+
+  /* SoloCal Palette Mappings for Light Mode */
+  --background: #4b0c24; /* Deep Burgundy for main background */
+  --foreground: #f5f1e6; /* Soft Cream for main text/foreground */
+
+  --card: #5e112d; /* Maroon for card backgrounds */
+  --card-foreground: #f5f1e6; /* Soft Cream for card text */
+
+  --popover: #5e112d; /* Maroon for popovers */
+  --popover-foreground: #f5f1e6; /* Soft Cream for popover text */
+
+  --primary: #d4af37; /* Rich Gold for primary interactive elements/branding */
+  --primary-foreground: #4b0c24; /* Deep Burgundy for text on primary elements */
+
+  --secondary: #a64d6d; /* Muted Rose for secondary elements */
+  --secondary-foreground: #f5f1e6; /* Soft Cream for text on secondary elements */
+
+  --muted: #2b0f1c; /* Muted Plum for muted backgrounds (e.g., disabled states) */
+  --muted-foreground: #efe9dc; /* Off-White for muted text */
+
+  --accent: #ffd700; /* Brighter Gold for accents */
+  --accent-foreground: #1c1b1b; /* Charcoal for text on accent */
+
+  --destructive: #d4af37; /* Rich gold for destructive actions */
+  --border: #2b0f1c; /* Muted Plum for borders */
+  --input: #f5f1e6; /* Maroon for input backgrounds */
+  --ring: #d4af37; /* Rich Gold for focus rings */
+
+  /* Chart colors - you'll need to decide how to map these from your SoloCal palette.
+     I've used some of your defined SoloCal colors for illustrative purposes,
+     but you might want a distinct sub-palette for charts.
+  */
+  --chart-1: #d4af37; /* Rich Gold */
+  --chart-2: #a64d6d; /* Muted Rose */
+  --chart-3: #f5f1e6; /* Soft Cream */
+  --chart-4: #5e112d; /* Maroon */
+  --chart-5: #ffd700; /* Brighter Gold */
+
+  --sidebar: #4b0c24; /* Deep Burgundy for sidebar background */
+  --sidebar-foreground: #f5f1e6; /* Soft Cream for sidebar text */
+  --sidebar-primary: #d4af37; /* Rich Gold for sidebar primary items */
+  --sidebar-primary-foreground: #4b0c24; /* Deep Burgundy for text on sidebar primary */
+  --sidebar-accent: #ffd700; /* Brighter Gold for sidebar accents */
+  --sidebar-accent-foreground: #1c1b1b; /* Charcoal for text on sidebar accent */
+  --sidebar-border: #2b0f1c; /* Muted Plum for sidebar borders */
+  --sidebar-ring: #d4af37; /* Rich Gold for sidebar rings */
+}
+
+/* Dark Mode: SoloCal Palette Application (If you need a distinct 'dark' mode using SoloCal's darker tones) */
+.dark {
+  /*
+    For a "dark" mode within the SoloCal aesthetic, you might:
+    - Use the same Deep Burgundy/Maroon as background but potentially a slightly deeper shade.
+    - Use Soft Cream/Off-White for foreground, but perhaps a tad brighter or darker depending on contrast.
+    - Keep Gold and Rose accents.
+    - Use Charcoal for borders/shadows.
+  */
+
+  --background: #1c1b1b; /* Charcoal for very dark backgrounds in dark mode */
+  --foreground: #efe9dc; /* Off-White for main text in dark mode */
+
+  --card: #2b0f1c; /* Muted Plum for card backgrounds in dark mode */
+  --card-foreground: #f5f1e6; /* Soft Cream for card text in dark mode */
+
+  --popover: #2b0f1c; /* Muted Plum for popovers in dark mode */
+  --popover-foreground: #f5f1e6; /* Soft Cream for popover text in dark mode */
+
+  --primary: #ffd700; /* Brighter Gold for primary in dark mode */
+  --primary-foreground: #1c1b1b; /* Charcoal for text on primary in dark mode */
+
+  --secondary: #92425f; /* Clay for secondary in dark mode */
+  --secondary-foreground: #f5f1e6; /* Soft Cream for text on secondary in dark mode */
+
+  --muted: #4b0c24; /* Deep Burgundy for muted backgrounds in dark mode */
+  --muted-foreground: #d4af37; /* Rich Gold for muted text in dark mode (subtle hint) */
+
+  --accent: #d4af37; /* Rich Gold for accents in dark mode */
+  --accent-foreground: #2b0f1c; /* Muted Plum for text on accent in dark mode */
+
+  --destructive: #d4af37; /* Rich gold for destructive actions (consistent) */
+  --border: #5e112d; /* Maroon for borders in dark mode */
+  --input: #4b0c24; /* Deep Burgundy for input backgrounds in dark mode */
+  --ring: #ffd700; /* Brighter Gold for focus rings in dark mode */
+
+  /* Chart colors for dark mode - adjust as needed for visibility */
+  --chart-1: #ffd700; /* Brighter Gold */
+  --chart-2: #a64d6d; /* Muted Rose */
+  --chart-3: #efe9dc; /* Off-White */
+  --chart-4: #4b0c24; /* Deep Burgundy */
+  --chart-5: #d4af37; /* Rich Gold */
+
+  --sidebar: #1c1b1b; /* Charcoal for sidebar background in dark mode */
+  --sidebar-foreground: #efe9dc; /* Off-White for sidebar text in dark mode */
+  --sidebar-primary: #ffd700; /* Brighter Gold for sidebar primary items in dark mode */
+  --sidebar-primary-foreground: #1c1b1b; /* Charcoal for text on sidebar primary in dark mode */
+  --sidebar-accent: #d4af37; /* Rich Gold for sidebar accents in dark mode */
+  --sidebar-accent-foreground: #2b0f1c; /* Muted Plum for text on sidebar accent in dark mode */
+  --sidebar-border: #5e112d; /* Maroon for sidebar borders in dark mode */
+  --sidebar-ring: #ffd700; /* Brighter Gold for sidebar rings in dark mode */
+}
+
+@layer base {
+  * {
+    /* These will now use your SoloCal border/ring colors */
+    @apply border-border outline-ring/50;
+  }
+  body {
+    /* These will now use your SoloCal background/foreground colors */
     @apply bg-background text-foreground;
   }
 }

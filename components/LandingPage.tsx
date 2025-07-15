@@ -6,9 +6,16 @@ import Image from 'next/image';
 
 export default function LandingPage() {
   return (
-    <main className='flex justify-center items-center p-10 gap-24 animate-fade-in max-md:flex-col'>
+    <main className='flex justify-center items-center p-10 gap-24 animate-fade-in max-md:flex-col bg-[#3f1c23]'>
       <section className='flex flex-col items-center gap-10'>
-        <Image src={'/assets/logo.svg'} width={300} height={300} alt='Logo' />
+        <Image
+          src={'/assets/fullLogo.png'}
+          width={300}
+          height={300}
+          quality={100}
+          unoptimized
+          alt='Logo'
+        />
 
         {/* Main heading */}
         <h1 className='text-2xl font-black lg:text-3xl'>
@@ -26,6 +33,8 @@ export default function LandingPage() {
           src={'/assets/planning.jpeg'}
           width={500}
           height={500}
+          quality={100}
+          unoptimized
           alt='Marking your calenders'
         />
       </section>

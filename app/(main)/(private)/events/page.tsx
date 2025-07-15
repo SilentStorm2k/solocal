@@ -17,7 +17,7 @@ export default async function EventsPage() {
       <div className='flex items-baseline gap-4'>
         <h1 className='text-4xl xl:text-5xl font-black mb-6'>Events</h1>
         <Button
-          className='bg-blue-500 hover:bg-blue-400 text-white py-6 hover:scale-110 duration-2 00 ease-out border-b-4 border-blue-700 hover:border-blue-500 rounded-2xl shadow-accent-foreground text-2xl font-black'
+          className='bg-solocal-neutral-soft-cream/60 hover:bg-solocal-neutral-off-white/75 text-white py-6 hover:scale-110 duration-200 ease-out border-b-4 rounded-2xl shadow-accent-foreground text-2xl font-black'
           asChild
         >
           <Link href={'/events/new'}>
@@ -40,7 +40,7 @@ export default async function EventsPage() {
           You do not have any events yet. Create your first event to get
           started!
           <Button
-            className='bg-blue-500 hover:bg-blue-400 text-white py-6 hover:scale-110 duration-200 ease-out border-b-4 border-blue-700 hover:border-blue-500 rounded-2xl shadow-accent-foreground text-2xl font-black'
+            className='bg-solocal-neutral-soft-cream/60 hover:bg-solocal-neutral-off-white/75 text-white py-6 hover:scale-110 duration-200 ease-out border-b-4 rounded-2xl shadow-accent-foreground text-2xl font-black'
             asChild
           >
             <Link href={'/events/new'}>
