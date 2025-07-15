@@ -1,5 +1,3 @@
-import { time } from 'console';
-
 // formats duration in minutes to a human-readable string
 export function formatEventDescription(durationInMinutes: number): string {
   const hours = Math.floor(durationInMinutes / 60);
@@ -15,7 +13,7 @@ export function formatEventDescription(durationInMinutes: number): string {
 
 export function formatTimeZoneOffset(timezone: string): string {
   return (
-    new Intl.DateTimeFormat('en-US', {
+    new Intl.DateTimeFormat(undefined, {
       timeZone: timezone,
       timeZoneName: 'shortOffset',
     })
