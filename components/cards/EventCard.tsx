@@ -32,7 +32,8 @@ export default function EventCard({
     <Card
       className={cn(
         'flex flex-col border-4 border-solocal-neutral-soft-cream/60 shadow-2xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110',
-        !isActive && 'bg-accent border-accent',
+        !isActive &&
+          'bg-solocal-accent-clay/45 border-solocal-accent-muted-rose/70',
       )}
     >
       <CardHeader className={cn(!isActive && 'opacity-50')}>
