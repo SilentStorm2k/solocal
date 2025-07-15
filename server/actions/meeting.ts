@@ -2,7 +2,6 @@
 
 import { db } from '@/drizzle/db';
 import { meetingActionSchema } from '@/schema/meeting';
-import { fromZonedTime } from 'date-fns-tz';
 import z from 'zod';
 import { getValidTimesFromSchedule } from './schedule';
 import { createCalendarEvent } from '../google/googleCalendar';
@@ -24,10 +23,7 @@ export async function createMeeting(
 
     if (!event) throw new Error('Event not found');
 
-    console.log(data);
-    // const startInTimezone = fromZonedTime(data.startTime, data.timezone);
     const startInTimezone = data.startTime;
-    console.log(startInTimezone);
     const validTimes = await getValidTimesFromSchedule(
       [startInTimezone],
       event,

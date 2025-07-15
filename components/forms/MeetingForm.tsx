@@ -5,8 +5,7 @@ import { createMeeting } from '@/server/actions/meeting';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toZonedTime } from 'date-fns-tz';
 import { useRouter } from 'next/navigation';
-import { Router } from 'next/router';
-import { Fragment, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import z from 'zod';
 import {
@@ -17,7 +16,6 @@ import {
   FormLabel,
   FormMessage,
 } from '../ui/form';
-import { DAYS_OF_WEEK_IN_ORDER } from '@/constants';
 import {
   formatDate,
   formatTimeString,
@@ -30,7 +28,7 @@ import {
   SelectContent,
   SelectItem,
 } from '../ui/select';
-import { CalendarIcon, Divide, Plus, X } from 'lucide-react';
+import { CalendarIcon } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
@@ -183,10 +181,7 @@ export default function MeetingForm({
                 <Select
                   disabled={date == null || timezone == null}
                   onValueChange={(value) =>
-                    field.onChange(
-                      // new Date(Date.parse(value)),
-                      fromZonedTime(value, timezone),
-                    )
+                    field.onChange(fromZonedTime(value, timezone))
                   }
                   defaultValue={field.value?.toISOString()}
                 >
