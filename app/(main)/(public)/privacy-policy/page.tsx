@@ -1,6 +1,4 @@
 // app/privacy-policy/page.tsx
-import React from 'react';
-
 export const metadata = {
   title: 'Privacy Policy - SoloCal',
   description:
@@ -188,7 +186,7 @@ const privacyPolicyHtmlContent = `
 </div>
 `;
 
-export default function PrivacyPolicyPage() {
+export default async function PrivacyPolicyPage() {
   return (
     <div className='container mx-auto p-4 max-w-3xl'>
       {/* Set the inner HTML using dangerouslySetInnerHTML */}
