@@ -17,7 +17,7 @@ export default function NoTimeSlots({
   calendarUser: { id: string; fullName: string | null };
 }) {
   return (
-    <Card className='max-w-md mx-auto border-4 border-blue-500/10 shadow-2xl transition delay-150 duration-500 ease-in-out hover:translate-y-1 hover:scale-125'>
+    <Card className='max-w-md mx-auto border-4 border-solocal-neutral-soft-cream/60 shadow-2xl transition delay-150 duration-500 ease-in-out hover:translate-y-1 hover:scale-125'>
       <CardHeader>
         <CardTitle>
           Book {event.name} with {calendarUser.fullName}
@@ -33,7 +33,8 @@ export default function NoTimeSlots({
       </CardContent>
       <CardFooter>
         <Button
-          className='cursor-pointer hover:scale-105 bg-blue-400 hover:bg-blue-600'
+          className='cursor-pointer hover:scale-105'
+          variant={'outline'}
           asChild
         >
           <Link href={`/book/${calendarUser.id}`}>Choose another event</Link>
