@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: 'SoloCal',
   description:
     'Your personal appointment scheduling hub. Easily create custom events and share your unique booking link for others to schedule appointments with you, hassle-free.',
+  other: {
+    'google-site-verification': process.env.GOOGLE_SITE_VERIFICATION!,
+  },
 };
 
 export default function RootLayout({
