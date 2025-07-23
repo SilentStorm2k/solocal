@@ -42,6 +42,7 @@ export async function createMeeting(
       clerkUserId: data.clerkUserId,
       eventId: data.eventId,
       startTime: data.startTime,
+      timeZone: data.timezone,
     };
   } catch (error: any) {
     console.error(`Error creating meeting: ${error.message || error}`);

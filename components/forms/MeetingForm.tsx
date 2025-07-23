@@ -77,7 +77,7 @@ export default function MeetingForm({
 
       const path = `/book/${meetingData.clerkUserId}/${
         meetingData.eventId
-      }/success?startTime=${meetingData.startTime.toISOString()}`;
+      }/success?startTime=${meetingData.startTime.toISOString()}&timeZone=${meetingData.timeZone}`;
       router.push(path);
     } catch (error: any) {
       form.setError('root', {
